@@ -1,3 +1,5 @@
+package proyectDraughts;
+
 import javafx.scene.image.*;
 import javafx.scene.paint.Color;
 import javafx.application.Application;
@@ -7,6 +9,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.stage.*;
 import javafx.scene.shape.Rectangle;
+
 
 public class JavaDraughts extends Application {
     GridPane root = new GridPane();
@@ -34,6 +37,7 @@ public class JavaDraughts extends Application {
     }
 
     public static void main(String[] args) {
-        launch(args);
+        // launch(args);
+        MainInterface mi = new MainInterface();
     }
 }
