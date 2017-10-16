@@ -16,8 +16,8 @@ public class JavaDraughts extends Application {
     final int size = 8;
 
     public void start(Stage primaryStage) {
-        Image img = new Image("file:///C:/Users/Isaac/Documents/image/black.png");
-        Image img2 = new Image("file:///C:/Users/Isaac/Documents/image/white.png");
+        Image img = new Image("image/black.png");
+        Image img2 = new Image("image/white.png");
         ImagePattern imagePattern = new ImagePattern(img);
         for (int row = 0; row < size; row++) {
             for (int col = 0; col < size; col++) {
