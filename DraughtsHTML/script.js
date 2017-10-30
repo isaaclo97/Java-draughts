@@ -1,27 +1,4 @@
-window.onload = function() {    
-  //The initial setup
-    // read text from URL location
-	var m;
-   /* var request = new XMLHttpRequest();
-    request.open('GET', 'notacion.txt', true);
-    request.send(null);
-    request.onreadystatechange = function () {
-        if (request.readyState === 4 && request.status === 200) {
-            var type = request.getResponseHeader('Content-Type');
-            if (type.indexOf("text") !== 1) {
-               // alert(request.responseText);
-				m=request.responseText;
-            }
-        }
-    }
-	var o=0;
-	for(var i=0; i<8;i++)
-		for(var j=0; j<8;j++)
-		{
-			gameBoard[i][j]=m[o];
-			o++;
-		}*/
-  var gameBoard = [ 
+    var gameBoard = [ 
     [  0,  1,  0,  1,  0,  1,  0,  1 ],
     [  1,  0,  1,  0,  1,  0,  1,  0 ],
     [  0,  1,  0,  1,  0,  1,  0,  1 ],
@@ -31,10 +8,45 @@ window.onload = function() {
     [  0,  2,  0,  2,  0,  2,  0,  2 ],
     [  2,  0,  2,  0,  2,  0,  2,  0 ]
   ];
-  //arrays to store the instances
+window.onload = function() { 
+ 
+$(document).ready(function() {
+  setInterval(function() {
+    set();
+  }, 500);
+});
+
+}
+  
+function set () {
+		 // read text from URL location
+		   isPaused = true;
+	var m;
+    var request = new XMLHttpRequest();
+    request.open('GET', 'notacion.txt', true);
+    request.send(null);
+    request.onreadystatechange = function () {
+        if (request.readyState === 4 && request.status === 200) {
+            var type = request.getResponseHeader('Content-Type');
+            if (type.indexOf("text") !== 1) {
+                success(request.responseText); 
+            }
+        }
+    } 	
+}
+function success(data) {
+	//alert(data);
+		var o=0;
+	for(var i=0; i<8; i++) 
+					for(var j=0; j<8; j++) {
+					    console.log(data.charAt(o));
+						gameBoard[i][j] = data.charAt(o);
+						o++;
+					}	
+
   var pieces = [];
   var tiles = []; 
-  
+   
   //distance formula
   var dist = function (x1, y1, x2, y2) {
     return Math.sqrt(Math.pow((x1-x2),2)+Math.pow((y1-y2),2));
@@ -130,13 +142,12 @@ window.onload = function() {
       location.reload(); 
     }
   }
+
   Board.initalize();
   var x = 1;
   //location.reaload();
   $('#cleargame').on("click", function () {
     Board.clear();
   });
-  
-
-  
+					
 }
