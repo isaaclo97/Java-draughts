@@ -148,7 +148,7 @@ div#board {
     margin-top: 1vmin;
     margin-left: 1vmin;
     cursor: pointer;
-    border: 1vmin solid #B93848; }
+    border: 1vmin solid #000000; }
     div#board .player1pieces .piece.selected {
       box-shadow: 0 0 10px 5px #16A8C7; }
   div#board .player2pieces .piece {
