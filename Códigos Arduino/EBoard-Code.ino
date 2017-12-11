@@ -62,5 +62,6 @@ String reverse(String aux)
       sol='0'+sol;
     }
   }
+  //Faltan poner comas y corchetes adecuadamente para que el processing lo lea correctamente
   return sol;
 }
