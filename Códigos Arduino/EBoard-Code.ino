@@ -3,7 +3,7 @@
 const int pcfAddress  = 0x24;
 const int pcfAddress1 = 0x39;
 const int pcfAddress2 = 0x20;
-const int pcfAddress3 = 0x20;
+const int pcfAddress3 = 0x26;
 void setup()
 {
    Wire.begin();
@@ -13,12 +13,12 @@ void setup()
 void loop()
 {
    //Cuando se pulse el boton que imprima
+   Serial.println(reverse(leerFila(pcfAddress1))); 
+   Serial.println(reverse(leerFila(pcfAddress3)));
+   Serial.println(reverse(leerFila(pcfAddress2)));
    Serial.println(reverse(leerFila(pcfAddress)));
-   Serial.println(reverse(leerFila(pcfAddress1)));
    Serial.println("------------------");
-   delay(1000);
-   //Serial.println(leerFila(pcfAddress2));
-   //Serial.println(leerFila(pcfAddress3));
+   delay(3000);
 }
 
 String leerFila(int x)
@@ -51,11 +51,14 @@ String reverse(String aux)
     if(i==3)
     {
       sol=aux[i]+sol;
-      sol='\n'+sol+'0';
+      sol="\n0"+sol;
     }
     else
     {
+      if(i!=0)
+      sol='0'+sol;
       sol=aux[i]+sol;
+      if(i==2)
       sol='0'+sol;
     }
   }
