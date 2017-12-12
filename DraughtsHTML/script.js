@@ -2,7 +2,7 @@ window.onload = function () {
 $(document).ready(function() {
   setInterval(function() {
     cache_clear()
-  }, 3000);
+  }, 500);
 });
 
 function cache_clear() {

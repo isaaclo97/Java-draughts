@@ -10,14 +10,14 @@ void setup()
 }
 void draw() {
   if (mySerial.available()> 0) {
-    String value = mySerial.readStringUntil('\n');
+    String value = mySerial.readStringUntil(' ');
   if (value != null) {
       println("Valor de anterior: "+anterior);
       println("Valor de value: "+value);
       if(value=="Terminar") exit();
       if(anterior!=value)
       {
-      output = createWriter( "C:/Users/Isaac/Desktop/var.js" );
+      output = createWriter( "C:/Users/Isaac/Desktop/DraughtsHTML/var.js" );
       value = "var gameBoard = ["+value+"];";
       output.println(value);
       anterior=value;
