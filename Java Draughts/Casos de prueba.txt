@@ -1,4 +1,0 @@
-//Para comprobar si es quitar piezas enviamos fila y columna
-0110305070214161 //Elimina dos primeras filas
-0110 //Elimina las dos primeras celdas
-//Para comprobar movimientos
